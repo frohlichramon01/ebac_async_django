@@ -24,9 +24,9 @@ def http_call_sync():
 async def async_view(request):
     loop = asyncio.get_event_loop()
     loop.create_task(http_call_async())
-    return HttpResponse('<h1>Non-blocking HTTP request</h1><p>Exercício módulo 11</p><p>Esta view será executada em paralelo com o contador</p>')
+    return HttpResponse('<title>Non-blocking</title><h1>Non-blocking HTTP request</h1><p>Exercício módulo 11</p><p>Esta view será executada em paralelo com o contador</p>')
 
 
 def sync_view(request):
     http_call_sync()
-    return HttpResponse('<h1>Blocking HTTP request</h1><p>Exercício módulo 11</p><p>Esta view só será executada quando terminar o contador</p>')
+    return HttpResponse('<title>Blocking</title><h1>Blocking HTTP request</h1><p>Exercício módulo 11</p><p>Esta view só será executada quando terminar o contador</p>')
